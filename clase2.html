@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <script>
+        let tiempo, dia, pago, impuesto, turno, total;
+        tiempo = parseInt(prompt("INGRESE EL TIEMPO"));
+        duracion = prompt("INGRESE EL DÍA");
+        turno = prompt("INGRESE EL TURNO");
+        if (tiempo <= 5) {
+            pago = tiempo * 1;
+        }
+        else if (tiempo <= 8) {
+            pago = (tiempo - 5) * 0.8;
+        }
+        else if (tiempo <= 10) {
+            pago = (tiempo - 8) * 0.7;
+        }
+        else {
+            pago = (tiempo - 10) * 0.5;
+        }
+
+        if (dia === "domingo") {
+            impuesto = (pago * 0.05).toFixed(2);
+        }
+        else if (turno === "matutino") {
+            impuesto = (pago * 0.15).toFixed(2);
+        }
+        else {
+            impuesto = (pago * 0.10).toFixed(2);
+        }
+        total = pago + impuesto;
+        document.write(`EL COSTO DE LA LLAMADA ES: ${total} <br>`);
+        document.write(`EL IMPUESTO DE LA LLAMADA ES: ${impuesto}<br>`);
+        document.write(`EL PAGO DE LA LLAMADA ES: ${pago} <br>`);
+
+    </script>
+</body>
+
+</html>
